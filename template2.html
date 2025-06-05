@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شموط أوتو - الوكيل الرسمي للسيارات في سوريا</title>
+    <meta name="description" content="شموط أوتو - الوكيل الرسمي للسيارات الصينية في سوريا، نقدم أفضل العروض والتقسيط الميسر">
+    <meta name="keywords" content="سيارات, تقسيط سيارات, سوريا, دمشق, شموط أوتو, سيارات صينية">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body class="bg-black text-white">
+    <!-- زر الواتساب العائم -->
+    <a href="#" class="fixed bottom-8 left-8 bg-green-500 text-white p-4 rounded-full shadow-lg z-50 hover:bg-green-600 transition-all">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- النافبار -->
+    <nav class="bg-black/90 fixed w-full z-40 border-b border-gold-500/30 backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- الشعار -->
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold gold-gradient glow">شموط أوتو</a>
+                <div class="hidden md:flex ml-6 space-x-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Great_Wall_Motors_Logo.svg/1200px-Great_Wall_Motors_Logo.svg.png" alt="Great Wall" class="h-8 opacity-80 hover:opacity-100 transition" loading="lazy">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Dongfeng_Motor_Corporation_logo.svg/1200px-Dongfeng_Motor_Corporation_logo.svg.png" alt="Dongfeng" class="h-8 opacity-80 hover:opacity-100 transition" loading="lazy">
+                </div>
+            </div>
+            
+            <!-- قائمة التنقل -->
+            <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                <a href="#" class="nav-link hover:text-gold-400 transition">الرئيسية</a>
+                <a href="#" class="nav-link hover:text-gold-400 transition">السيارات</a>
+                <a href="#" class="nav-link hover:text-gold-400 transition">العروض</a>
+                <a href="#" class="nav-link hover:text-gold-400 transition">التقسيط</a>
+                <a href="#" class="nav-link hover:text-gold-400 transition">من نحن</a>
+                <a href="#" class="nav-link hover:text-gold-400 transition">تواصل معنا</a>
+                
+                <!-- زر احجز الآن -->
+                <a href="#" class="gold-bg text-black px-6 py-2 rounded-full font-bold hover:bg-gold-600 transition">احجز الآن</a>
+                
+                <!-- تغيير اللغة -->
+                <div class="flex items-center space-x-2 space-x-reverse">
+                    <span class="text-gold-400">عربي</span>
+                    <span class="text-gray-400">|</span>
+                    <a href="#" class="text-gray-400 hover:text-white">ENG</a>
+                </div>
+            </div>
+            
+            <!-- زر القائمة المختصرة للجوال -->
+            <button id="mobile-menu-button" class="md:hidden text-gold-400">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- قائمة الجوال -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black/90 z-50 hidden transition-all duration-300">
+        <div class="container mx-auto px-4 py-8">
+            <button id="close-menu" class="text-gold-400 text-2xl mb-8">✕</button>
+            <div class="flex flex-col space-y-6 text-center">
+                <a href="#" class="text-2xl hover:text-gold-400 transition">الرئيسية</a>
+                <a href="#" class="text-2xl hover:text-gold-400 transition">السيارات</a>
+                <a href="#" class="text-2xl hover:text-gold-400 transition">العروض</a>
+                <a href="#" class="text-2xl hover:text-gold-400 transition">التقسيط</a>
+                <a href="#" class="text-2xl hover:text-gold-400 transition">من نحن</a>
+                <a href="#" class="text-2xl hover:text-gold-400 transition">تواصل معنا</a>
+                <a href="#" class="gold-bg text-black px-6 py-3 rounded-full font-bold mt-4">احجز الآن</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- الهيرو -->
+    <section class="relative h-screen pt-16">
+        <!-- فيديو الخلفية -->
+        <div class="absolute inset-0 overflow-hidden">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover" loading="lazy">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-sports-car-driving-on-a-race-track-43755-large.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+        
+        <!-- محتوى الهيرو -->
+        <div class="relative h-full flex items-center">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 gold-gradient">سيارتك الجديدة... أقرب مما تتخيل</h1>
+                <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">أفضل العروض والتقسيط الميسر في سوريا مع شموط أوتو، الوكيل الرسمي للسيارات الصينية في سوريا</p>
+                <div class="flex justify-center space-x-4 space-x-reverse">
+                    <a href="#" class="gold-bg text-black px-8 py-3 rounded-full font-bold text-lg hover:bg-gold-600 transition">ابدأ بالاختيار</a>
+                    <a href="#" class="border border-gold-400 text-gold-400 px-8 py-3 rounded-full font-bold text-lg hover:bg-gold-400/10 transition">اكتشف العروض</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- باقي أقسام الموقع تبقى كما هي مع إضافة class="nav-link" للروابط -->
+    <!-- قسم الماركات المدعومة -->
+    <section class="py-16 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 gold-gradient">ماركات نتعامل معها</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <div class="brand-logo flex justify-center items-center p-4 transition">
+                    <img class="nav-link" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Great_Wall_Motors_Logo.svg/1200px-Great_Wall_Motors_Logo.svg.png" alt="Great Wall" class="h-16 opacity-80 hover:opacity-100">
+                </div>
+                <div class="brand-logo flex justify-center items-center p-4 transition">
+                    <img class="nav-link" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Dongfeng_Motor_Corporation_logo.svg/1200px-Dongfeng_Motor_Corporation_logo.svg.png" alt="Dongfeng" class="h-16 opacity-80 hover:opacity-100">
+                </div>
+                <div class="brand-logo flex justify-center items-center p-4 transition">
+                    <img class="nav-link" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Chery_Logo.svg/1200px-Chery_Logo.svg.png" alt="Chery" class="h-16 opacity-80 hover:opacity-100">
+                </div>
+                <div class="brand-logo flex justify-center items-center p-4 transition">
+                    <img class="nav-link" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Changan_Automobile_Logo.svg/1200px-Changan_Automobile_Logo.svg.png" alt="Changan" class="h-16 opacity-80 hover:opacity-100">
+                </div>
+                <div class="brand-logo flex justify-center items-center p-4 transition">
+                    <img class="nav-link" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Geely_Logo.svg/1200px-Geely_Logo.svg.png" alt="Geely" class="h-16 opacity-80 hover:opacity-100">
+                </div>
+                <div class="brand-logo flex justify-center items-center p-4 transition">
+                    <img class="nav-link" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Toyota_wordmark.svg/1200px-Toyota_wordmark.svg.png" alt="Toyota" class="h-16 opacity-80 hover:opacity-100">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم العروض الحالية -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold gold-gradient">العروض الحالية</h2>
+                <div class="flex items-center bg-red-500/20 px-4 py-2 rounded-full">
+                    <span class="text-red-400 mr-2">ينتهي خلال:</span>
+                    <span class="font-bold" id="countdown">2:15:33</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- عرض 1 -->
+                <div class="car-card bg-gray-900 rounded-xl overflow-hidden transition duration-300">
+                    <div class="relative">
+                        <img class="nav-link" src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="سيارة" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-gold-500 text-black px-3 py-1 rounded-full font-bold">خصم 10%</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">غريت وول T600Sport 2024</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="text-gold-400 mr-2">★★★★★</span>
+                            <span class="text-gray-400">(24 تقييم)</span>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-gray-400 line-through mr-2">75,000,000 ل.س</span>
+                            <span class="text-xl font-bold">65,000,000 ل.س</span>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-400">القسط الشهري من <span class="text-gold-400 font-bold">1,200,000 ل.س</span></p>
+                        </div>
+                        <a href="#" class="block w-full gold-bg text-black text-center py-2 rounded-lg font-bold hover:bg-gold-600 transition">تفاصيل العرض</a>
+                    </div>
+                </div>
+                
+                <!-- عرض 2 -->
+                <div class="car-card bg-gray-900 rounded-xl overflow-hidden transition duration-300">
+                    <div class="relative">
+                        <img class="nav-link" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="سيارة" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-gold-500 text-black px-3 py-1 rounded-full font-bold">بدون دفعة أولى</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">دونغ فنغ 2024</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="text-gold-400 mr-2">★★★★☆</span>
+                            <span class="text-gray-400">(18 تقييم)</span>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-xl font-bold">45,000,000 ل.س</span>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-400">القسط الشهري من <span class="text-gold-400 font-bold">900,000 ل.س</span></p>
+                        </div>
+                        <a href="#" class="block w-full gold-bg text-black text-center py-2 rounded-lg font-bold hover:bg-gold-600 transition">تفاصيل العرض</a>
+                    </div>
+                </div>
+                
+                <!-- عرض 3 -->
+                <div class="car-card bg-gray-900 rounded-xl overflow-hidden transition duration-300">
+                    <div class="relative">
+                        <img class="nav-link" src="https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="سيارة" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-gold-500 text-black px-3 py-1 rounded-full font-bold">عرض خاص</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">فان نقل 2024</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="text-gold-400 mr-2">★★★★★</span>
+                            <span class="text-gray-400">(32 تقييم)</span>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-gray-400 line-through mr-2">60,000,000 ل.س</span>
+                            <span class="text-xl font-bold">55,000,000 ل.س</span>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-400">القسط الشهري من <span class="text-gold-400 font-bold">1,100,000 ل.س</span></p>
+                        </div>
+                        <a href="#" class="block w-full gold-bg text-black text-center py-2 rounded-lg font-bold hover:bg-gold-600 transition">تفاصيل العرض</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم لماذا شموط أوتو -->
+    <section class="py-16 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 gold-gradient">ليش شموط أوتو؟</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- ميزة 1 -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700 hover:border-gold-400 transition">
+                    <div class="text-gold-400 text-4xl mb-4">✔️</div>
+                    <h3 class="text-xl font-bold mb-2">تقسيط بدون تعقيد</h3>
+                    <p class="text-gray-400">شروط ميسرة وموافقة سريعة بدون ربا أو فوائد بنكية</p>
+                </div>
+                
+                <!-- ميزة 2 -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700 hover:border-gold-400 transition">
+                    <div class="text-gold-400 text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-2">ضمان وصيانة حقيقية</h3>
+                    <p class="text-gray-400">ضمان حتى 5 سنوات ومراكز صيانة معتمدة في جميع المحافظات</p>
+                </div>
+                
+                <!-- ميزة 3 -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700 hover:border-gold-400 transition">
+                    <div class="text-gold-400 text-4xl mb-4">🤝</div>
+                    <h3 class="text-xl font-bold mb-2">شفافية وأسعار منافسة</h3>
+                    <p class="text-gray-400">لا يوجد أسعار خفية - نضمن لك أفضل سعر في السوق</p>
+                </div>
+                
+                <!-- ميزة 4 -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700 hover:border-gold-400 transition">
+                    <div class="text-gold-400 text-4xl mb-4">🏢</div>
+                    <h3 class="text-xl font-bold mb-2">أكثر من 5 صالات عرض</h3>
+                    <p class="text-gray-400">زورونا في فروعنا المنتشرة في جميع أنحاء سوريا</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم السيارات المتوفرة -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 gold-gradient">السيارات المتوفرة</h2>
+            
+            <!-- فلتر السيارات -->
+            <div class="bg-gray-900 rounded-xl p-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-gray-400 mb-2">النوع</label>
+                        <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                            <option>جميع الأنواع</option>
+                            <option>سيدان</option>
+                            <option>SUV</option>
+                            <option>نقل</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-400 mb-2">السعر</label>
+                        <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                            <option>جميع الفئات</option>
+                            <option>أقل من 50 مليون</option>
+                            <option>50 - 100 مليون</option>
+                            <option>أكثر من 100 مليون</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-400 mb-2">عدد الركاب</label>
+                        <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                            <option>أي عدد</option>
+                            <option>2-4 ركاب</option>
+                            <option>5-7 ركاب</option>
+                            <option>أكثر من 7</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-400 mb-2">نوع الوقود</label>
+                        <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                            <option>جميع الأنواع</option>
+                            <option>بنزين</option>
+                            <option>ديزل</option>
+                            <option>هايبرد</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- نتائج البحث -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- سيارة 1 -->
+                <div class="car-card bg-gray-900 rounded-xl overflow-hidden transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="سيارة" class="w-full h-64 object-cover">
+                        <button class="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-gold-400 hover:text-black transition">
+                            <i class="fas fa-rotate"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">شيري تيجو 8 2024</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">7 مقاعد</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">أوتوماتيك</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">تيربو</span>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-xl font-bold">70,000,000 ل.س</span>
+                        </div>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="flex-1 gold-bg text-black text-center py-2 rounded-lg font-bold hover:bg-gold-600 transition">طلب عرض السعر</a>
+                            <button class="w-12 bg-gray-800 text-gold-400 rounded-lg hover:bg-gold-400 hover:text-black transition">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- سيارة 2 -->
+                <div class="car-card bg-gray-900 rounded-xl overflow-hidden transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="سيارة" class="w-full h-64 object-cover">
+                        <button class="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-gold-400 hover:text-black transition">
+                            <i class="fas fa-rotate"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">تشانجان CS75 2024</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">5 مقاعد</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">أوتوماتيك</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">دفع رباعي</span>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-xl font-bold">85,000,000 ل.س</span>
+                        </div>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="flex-1 gold-bg text-black text-center py-2 rounded-lg font-bold hover:bg-gold-600 transition">طلب عرض السعر</a>
+                            <button class="w-12 bg-gray-800 text-gold-400 rounded-lg hover:bg-gold-400 hover:text-black transition">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- سيارة 3 -->
+                <div class="car-card bg-gray-900 rounded-xl overflow-hidden transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1502872364588-894d7d6ddfab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="سيارة" class="w-full h-64 object-cover">
+                        <button class="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-gold-400 hover:text-black transition">
+                            <i class="fas fa-rotate"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">جيلي كول راي 2024</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">4 مقاعد</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">أوتوماتيك</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded-full text-sm">هايبرد</span>
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-xl font-bold">95,000,000 ل.س</span>
+                        </div>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="flex-1 gold-bg text-black text-center py-2 rounded-lg font-bold hover:bg-gold-600 transition">طلب عرض السعر</a>
+                            <button class="w-12 bg-gray-800 text-gold-400 rounded-lg hover:bg-gold-400 hover:text-black transition">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border border-gold-400 text-gold-400 px-8 py-3 rounded-full font-bold hover:bg-gold-400 hover:text-black transition">عرض المزيد من السيارات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم حاسبة التقسيط -->
+    <section class="py-16 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <div class="bg-gray-800 rounded-xl p-8 md:p-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 gold-gradient">احسب قسطك الآن</h2>
+                        <p class="text-gray-400 mb-8">استخدم الحاسبة التالية لمعرفة القسط الشهري المتوقع لسيارتك الجديدة حسب مدة التقسيط المفضلة لديك</p>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-gray-400 mb-2">سعر السيارة (ل.س)</label>
+                                <input type="range" min="10000000" max="200000000" value="50000000" step="1000000" class="w-full gold-slider">
+                                <div class="flex justify-between mt-2">
+                                    <span class="text-gray-400">10 مليون</span>
+                                    <span class="text-gold-400 font-bold" id="price-value">50,000,000 ل.س</span>
+                                    <span class="text-gray-400">200 مليون</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-400 mb-2">مدة التقسيط</label>
+                                <select class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3">
+                                    <option>1 سنة (12 شهر)</option>
+                                    <option>2 سنة (24 شهر)</option>
+                                    <option selected>3 سنة (36 شهر)</option>
+                                    <option>4 سنة (48 شهر)</option>
+                                    <option>5 سنة (60 شهر)</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-400 mb-2">نسبة الدفعة الأولى</label>
+                                <select class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3">
+                                    <option>0% (بدون دفعة أولى)</option>
+                                    <option>10%</option>
+                                    <option selected>20%</option>
+                                    <option>30%</option>
+                                    <option>50%</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-900 rounded-xl p-8 flex flex-col justify-center">
+                        <h3 class="text-xl font-bold mb-6 text-center">النتيجة</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-400">سعر السيارة</span>
+                                <span class="font-bold">50,000,000 ل.س</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-400">الدفعة الأولى (20%)</span>
+                                <span class="font-bold">10,000,000 ل.س</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-400">المبلغ المتبقي</span>
+                                <span class="font-bold">40,000,000 ل.س</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-400">مدة التقسيط</span>
+                                <span class="font-bold">36 شهر</span>
+                            </div>
+                            <div class="flex justify-between pt-4">
+                                <span class="text-xl text-gold-400">القسط الشهري</span>
+                                <span class="text-2xl font-bold gold-gradient">1,111,111 ل.س</span>
+                            </div>
+                        </div>
+                        
+                        <button class="mt-8 w-full gold-bg text-black py-3 rounded-lg font-bold hover:bg-gold-600 transition">أرسل طلب تقسيط</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم آراء العملاء -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 gold-gradient">ماذا يقول عملاؤنا؟</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- رأي 1 -->
+                <div class="bg-gray-900 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gold-400 flex items-center justify-center text-black font-bold text-xl mr-4">م</div>
+                        <div>
+                            <h4 class="font-bold">محمد علي</h4>
+                            <div class="text-gold-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">"اشتريت من شموط أوتو سيارة غريت وول والدفع كان على 5 سنوات بدون ربا، فريق محترف وصادق في تعاملاته"</p>
+                    <div class="text-sm text-gray-500">منذ شهرين</div>
+                </div>
+                
+                <!-- رأي 2 -->
+                <div class="bg-gray-900 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gold-400 flex items-center justify-center text-black font-bold text-xl mr-4">س</div>
+                        <div>
+                            <h4 class="font-bold">سارة أحمد</h4>
+                            <div class="text-gold-400">★★★★☆</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">"تجربة ممتازة، السيارة صامدة من سنتين بدون مشاكل والصيانة عندهم سريعة وبأسعار معقولة"</p>
+                    <div class="text-sm text-gray-500">منذ 5 أشهر</div>
+                </div>
+                
+                <!-- رأي 3 -->
+                <div class="bg-gray-900 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gold-400 flex items-center justify-center text-black font-bold text-xl mr-4">ع</div>
+                        <div>
+                            <h4 class="font-bold">علي حسن</h4>
+                            <div class="text-gold-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">"استبدلت سيارتي القديمة بسيارة جديدة من شموط أوتو، أعطوني سعر مناسب جداً والتقسيط كان مريح"</p>
+                    <div class="text-sm text-gray-500">منذ أسبوع</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عن الشركة -->
+    <section class="py-16 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 gold-gradient">من نحن؟</h2>
+                    <p class="text-gray-400 mb-6">شموط أوتو هي الوكيل الرسمي للعديد من ماركات السيارات العالمية في سوريا، تأسست عام 2005 بهدف تقديم أفضل السيارات بأسعار تنافسية وشروط تقسيط ميسرة.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="text-gold-400 mt-1 mr-3">✓</div>
+                            <div>
+                                <h4 class="font-bold">رؤيتنا</h4>
+                                <p class="text-gray-400">أن نكون الخيار الأول للزبائن الباحثين عن سيارات بجودة عالية وخدمة ما بعد البيع.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-gold-400 mt-1 mr-3">✓</div>
+                            <div>
+                                <h4 class="font-bold">رسالتنا</h4>
+                                <p class="text-gray-400">تقديم تجربة شراء سيارة مميزة مع ضمانات حقيقية وخدمة عملاء على مدار الساعة.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-800 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold gold-gradient mb-2">18+</div>
+                            <div class="text-gray-400">سنة خبرة</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold gold-gradient mb-2">5</div>
+                            <div class="text-gray-400">صالات عرض</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold gold-gradient mb-2">1500+</div>
+                            <div class="text-gray-400">زبون راضي</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold gold-gradient mb-2">12</div>
+                            <div class="text-gray-400">ماركة عالمية</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="صالة عرض" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1583&q=80" alt="صالة عرض" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="صالة عرض" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="صالة عرض" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الفروع والتواصل -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 gold-gradient">فروعنا وطرق التواصل</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- خريطة -->
+                <div class="bg-gray-900 rounded-xl overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.8472374552975!2d36.30654831513666!3d33.51323098128049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e6dc413cc6a7%3A0x6b9f66ebd1e394f2!2sDamascus%2C%20Syria!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" width="100%" height="100%" style="min-height: 400px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+                <!-- معلومات التواصل -->
+                <div class="space-y-6">
+                    <div class="bg-gray-900 rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4">الفرع الرئيسي - دمشق</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-gold-400 mt-1 mr-3"></i>
+                                <span class="text-gray-400">المنطقة الحرة - البرامكة، دمشق، سوريا</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-gold-400 mt-1 mr-3"></i>
+                                <span class="text-gray-400">+963 11 9260</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-gold-400 mt-1 mr-3"></i>
+                                <span class="text-gray-400">الأحد - الخميس: 9 صباحاً - 5 مساءً</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-900 rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4">تواصل معنا</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4 space-x-reverse">
+                                <a href="#" class="bg-gray-800 text-gold-400 p-3 rounded-full hover:bg-gold-400 hover:text-black transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 text-gold-400 p-3 rounded-full hover:bg-gold-400 hover:text-black transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 text-gold-400 p-3 rounded-full hover:bg-gold-400 hover:text-black transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 text-gold-400 p-3 rounded-full hover:bg-gold-400 hover:text-black transition">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                            
+                            <form class="space-y-4">
+                                <input type="text" placeholder="اسمك الكريم" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3">
+                                <input type="email" placeholder="بريدك الإلكتروني" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3">
+                                <input type="tel" placeholder="رقم هاتفك" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3">
+                                <textarea placeholder="رسالتك" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 h-32"></textarea>
+                                <button type="submit" class="w-full gold-bg text-black py-3 rounded-lg font-bold hover:bg-gold-600 transition">إرسال الرسالة</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="bg-gray-900/80 border-t border-gray-800">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- معلومات الشركة -->
+                <div>
+                    <a href="#" class="text-2xl font-bold gold-gradient mb-4 inline-block">شموط أوتو</a>
+                    <p class="text-gray-400 mb-6">الوكيل الرسمي للسيارات الصينية في سوريا، نقدم أفضل السيارات بأفضل الأسعار وعروض التقسيط المميزة</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- روابط سريعة -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b border-gold-400/30 pb-2">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-gold-400 transition">الرئيسية</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-400 transition">السيارات الجديدة</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-400 transition">السيارات المستعملة</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-400 transition">العروض والتخفيضات</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-400 transition">شروط التقسيط</a></li>
+                    </ul>
+                </div>
+                
+                <!-- خدمات -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b border-gold-400/30 pb-2">خدمات</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-gold-400 transition">اختبار القيادة</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-400 transition">حاسبة التقسيط</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-400 transition">مراكز الصيانة</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-400 transition">استبدال سيارتك</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-400 transition">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                
+                <!-- اشتراك في النشرة -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b border-gold-400/30 pb-2">النشرة البريدية</h3>
+                    <p class="text-gray-400 mb-4">اشترك ليصلك كل جديد عن العروض والمنتجات</p>
+                    <form class="flex">
+                        <input type="email" placeholder="بريدك الإلكتروني" class="flex-1 bg-gray-800 border border-gray-700 rounded-r-none rounded-lg px-4 py-2">
+                        <button type="submit" class="gold-bg text-black px-4 py-2 rounded-l-none rounded-lg font-bold hover:bg-gold-600 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- حقوق النشر -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2024 جميع الحقوق محفوظة لشركة شموط أوتو</p>
+            </div>
+        </div>
+   
+    <!-- شريط المقارنة -->
+    <div id="compare-bar" class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gold-400 p-4 hidden transform translate-y-full transition-transform duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <div id="compare-items" class="flex space-x-4"></div>
+            <button id="compare-btn" class="gold-bg text-black px-6 py-2 rounded-full font-bold">قارن (<span id="compare-count">0</span>)</button>
+        </div>
+    </div>
+
+    <!-- الجافاسكريبت -->
+    <script>
+        // قائمة الجوال
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('close-menu').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+
+        // عد تنازلي للعروض
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const diff = endOfDay - now;
+            
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // حاسبة التقسيط
+        const priceSlider = document.querySelector('input[type="range"]');
+        const priceValue = document.getElementById('price-value');
+        const durationSelect = document.querySelector('select[name="duration"]');
+        const downPaymentSelect = document.querySelector('select[name="down-payment"]');
+        const monthlyPayment = document.getElementById('monthly-payment');
+        
+        function calculatePayment() {
+            const price = parseInt(priceSlider.value);
+            const duration = parseInt(durationSelect.value);
+            const downPaymentPercent = parseInt(downPaymentSelect.value);
+            
+            const downPayment = price * (downPaymentPercent / 100);
+            const remaining = price - downPayment;
+            const monthly = remaining / duration;
+            
+            priceValue.textContent = `${price.toLocaleString()} ل.س`;
+            monthlyPayment.textContent = `${monthly.toLocaleString(undefined, {maximumFractionDigits: 0})} ل.س`;
+        }
+        
+        priceSlider.addEventListener('input', calculatePayment);
+        durationSelect.addEventListener('change', calculatePayment);
+        downPaymentSelect.addEventListener('change', calculatePayment);
+        
+        calculatePayment();
+
+        // نظام المقارنة
+        const compareBar = document.getElementById('compare-bar');
+        const compareItems = document.getElementById('compare-items');
+        const compareBtn = document.getElementById('compare-btn');
+        const compareCount = document.getElementById('compare-count');
+        const compareList = [];
+        
+        document.querySelectorAll('.compare-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const carId = this.dataset.carId;
+                const carName = this.dataset.carName;
+                
+                if (this.checked) {
+                    if (compareList.length < 3) {
+                        compareList.push({id: carId, name: carName});
+                    } else {
+                        this.checked = false;
+                        alert('يمكنك مقارنة 3 سيارات كحد أقصى');
+                    }
+                } else {
+                    const index = compareList.findIndex(item => item.id === carId);
+                    if (index > -1) {
+                        compareList.splice(index, 1);
+                    }
+                }
+                
+                updateCompareBar();
+            });
+        });
+        
+        function updateCompareBar() {
+            compareItems.innerHTML = '';
+            compareList.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'bg-gray-800 px-4 py-2 rounded-lg flex items-center';
+                itemEl.innerHTML = `
+                    <span>${item.name}</span>
+                    <button class="ml-2 text-red-400" data-id="${item.id}">×</button>
+                `;
+                compareItems.appendChild(itemEl);
+                
+                itemEl.querySelector('button').addEventListener('click', function() {
+                    const carId = this.dataset.id;
+                    const index = compareList.findIndex(item => item.id === carId);
+                    if (index > -1) {
+                        compareList.splice(index, 1);
+                        document.querySelector(`.compare-checkbox[data-car-id="${carId}"]`).checked = false;
+                        updateCompareBar();
+                    }
+                });
+            });
+            
+            compareCount.textContent = compareList.length;
+            
+            if (compareList.length > 0) {
+                compareBar.classList.remove('hidden');
+                compareBar.classList.remove('translate-y-full');
+            } else {
+                compareBar.classList.add('translate-y-full');
+                setTimeout(() => {
+                    if (compareList.length === 0) {
+                        compareBar.classList.add('hidden');
+                    }
+                }, 300);
+            }
+        }
+
+        // التمرير السلس
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

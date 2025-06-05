@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقارنة السيارات - شموط أوتو</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <style>
+        .gold-gradient {
+            background: linear-gradient(90deg, #D4AF37, #F9D423);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gold-bg {
+            background: linear-gradient(90deg, #D4AF37, #F9D423);
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .comparison-header {
+            background: linear-gradient(90deg, #D4AF37, #F9D423);
+            color: black;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white">
+    <!-- النافبار -->
+    <nav class="bg-black/90 fixed w-full z-40 backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- الشعار -->
+            <div class="flex items-center">
+                <a href="/" class="text-2xl font-bold gold-gradient glow">
+                    <img class="md:w-48 md:h-12 w-28 h-8 logo-glow" src="images/logo.png" alt="shammout auto logo">
+                </a>
+            </div>
+
+            <!-- قائمة التنقل -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#" class="nav-link hover:text-gold-400 transition">الرئيسية</a>
+                <a href="#" class="nav-link hover:text-gold-400 transition">السيارات</a>
+                <a href="#" class="nav-link hover:text-gold-400 transition">العروض</a>
+                <a href="#" class="nav-link hover:text-gold-400 transition">التقسيط</a>
+                <a href="#" class="nav-link hover:text-gold-400 transition">من نحن</a>
+                <a href="#" class="nav-link hover:text-gold-400 transition">تواصل معنا</a>
+
+            </div>
+
+            <div class="flex gap-4">
+                <!-- زر احجز الآن -->
+                <a href="#"
+                    class="hidden lg:flex gold-bg text-black px-6 py-2 rounded-full font-bold hover:bg-gold-600 transition">احجز
+                    الآن</a>
+
+                <!-- تغيير اللغة -->
+                <div class="flex items-center space-x-2">
+                    <span class="text-gold-400">عربي</span>
+                    <span class="text-gray-400">|</span>
+                    <a href="#" class="text-gray-400 hover:text-white">ENG</a>
+                </div>
+            </div>
+
+            <!-- زر المقارنة -->
+            <a id="compare-btn" href="comparison.html"
+                class="hidden bg-blue-600 text-white px-4 py-2 rounded-full font-bold hover:bg-blue-700 transition mr-4">
+                مقارنة (0) <i class="fas fa-exchange-alt mr-2"></i>
+            </a>
+            <!-- زر القائمة المختصرة للجوال -->
+            <button id="mobile-menu-button" class="lg:hidden text-gold-400">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- محتوى المقارنة -->
+    <section class="pt-24 pb-16 min-h-screen">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-12 text-center gold-gradient">مقارنة السيارات</h1>
+            <div class="flex justify-between border-b border-gray-700 pb-2">
+                <span class="text-gray-400">نوع الوقود:</span>
+                <span class="font-bold">${car.fuelType || 'بنزين'}</span>
+            </div>
+            <div class="flex justify-between border-b border-gray-700 pb-2">
+                <span class="text-gray-400">استهلاك الوقود:</span>
+                <span class="font-bold">${car.fuelConsumption || '---'}</span>
+            </div>
+            <div id="comparison-container" class="bg-gray-900 rounded-xl p-6">
+                <!-- سيتم ملء هذا القسم بالبيانات من JavaScript -->
+                <div class="text-center py-12">
+                    <i class="fas fa-car text-5xl text-gray-600 mb-4"></i>
+                    <p class="text-xl text-gray-400">لم يتم اختيار سيارتين للمقارنة بعد</p>
+                    <a href="index.html"
+                        class="inline-block mt-6 gold-bg text-black px-6 py-2 rounded-full font-bold hover:bg-gold-600 transition">
+                        العودة لاختيار السيارات
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+            © 2023 شموط أوتو. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <!-- JavaScript للمقارنة -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const comparisonContainer = document.getElementById('comparison-container');
+            const selectedCars = JSON.parse(localStorage.getItem('selectedCarsForComparison')) || [];
+
+            if (selectedCars.length >= 2) {
+                renderComparison(selectedCars[0], selectedCars[1]);
+            }
+
+            function renderComparison(car1, car2) {
+                comparisonContainer.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- السيارة الأولى -->
+                        <div class="car-1 bg-gray-800 rounded-xl p-6">
+                            <div class="text-center mb-6">
+                                <img src="${car1.image}" alt="${car1.name}" class="h-48 object-contain mx-auto mb-4" loading="lazy">
+                                <h3 class="text-2xl font-bold gold-gradient">${car1.name}</h3>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex justify-between border-b border-gray-700 pb-2">
+                                    <span class="text-gray-400">السعر:</span>
+                                    <span class="font-bold">${car1.price}</span>
+                                </div>
+                                ${renderSpecs(car1.specs)}
+                            </div>
+                        </div>
+                        
+                        <!-- السيارة الثانية -->
+                        <div class="car-2 bg-gray-800 rounded-xl p-6">
+                            <div class="text-center mb-6">
+                                <img src="${car2.image}" alt="${car2.name}" class="h-48 object-contain mx-auto mb-4" loading="lazy">
+                                <h3 class="text-2xl font-bold gold-gradient">${car2.name}</h3>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex justify-between border-b border-gray-700 pb-2">
+                                    <span class="text-gray-400">السعر:</span>
+                                    <span class="font-bold">${car2.price}</span>
+                                </div>
+                                ${renderSpecs(car2.specs)}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 text-center">
+                        <a href="index.html" class="inline-block gold-bg text-black px-6 py-2 rounded-full font-bold hover:bg-gold-600 transition">
+                            مقارنة سيارات أخرى
+                        </a>
+                    </div>
+                `;
+            }
+
+            function renderSpecs(specs) {
+                if (typeof specs === 'string') {
+                    return specs.split(',').map(spec => `
+                        <div class="flex justify-between border-b border-gray-700 pb-2">
+                            <span class="text-gray-400">${spec.trim()}:</span>
+                            <span class="font-bold">✓</span>
+                        </div>
+                    `).join('');
+                }
+                return '';
+            }
+        });
+    </script>
+</body>
+
+</html>
